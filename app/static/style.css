@@ -1,0 +1,383 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #1a202c;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #2b6cb0, #2c5282);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header .badge {
+    background: rgba(255,255,255,0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.15);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255,255,255,0.3);
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+
+.card h2 {
+    font-size: 1.15rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.form-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.input-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.input-field input:focus {
+    border-color: #4299e1;
+}
+
+.btn {
+    padding: 0.65rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: #4299e1;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #3182ce;
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background: #38a169;
+}
+
+.btn-danger {
+    background: #f56565;
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #e53e3e;
+}
+
+.btn-warning {
+    background: #ed8936;
+    color: white;
+}
+
+.btn-warning:hover:not(:disabled) {
+    background: #dd6b20;
+}
+
+.queue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.queue-grid .card {
+    margin-bottom: 0;
+}
+
+.current-token-display {
+    text-align: center;
+    padding: 2rem;
+}
+
+.current-token-display .token-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2b6cb0;
+    line-height: 1;
+}
+
+.current-token-display .token-label {
+    font-size: 1rem;
+    color: #718096;
+    margin-top: 0.5rem;
+}
+
+.current-token-display .patient-name {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-top: 0.25rem;
+}
+
+.empty-state {
+    color: #a0aec0;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+.waiting-list {
+    list-style: none;
+}
+
+.waiting-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0.8rem;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+}
+
+.waiting-list li:last-child {
+    border-bottom: none;
+}
+
+.waiting-list .token-tag {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-right: 0.75rem;
+}
+
+.waiting-list .name {
+    flex: 1;
+}
+
+.waiting-list .status-serving {
+    color: #38a169;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background: #f0fff4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.waiting-list .status-waiting {
+    color: #d69e2e;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.stats-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 140px;
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-box .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2b6cb0;
+}
+
+.stat-box .stat-label {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 0.25rem;
+}
+
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.alert-success {
+    background: #f0fff4;
+    color: #276749;
+    border: 1px solid #c6f6d5;
+    display: block;
+}
+
+.alert-error {
+    background: #fff5f5;
+    color: #9b2c2c;
+    border: 1px solid #fed7d7;
+    display: block;
+}
+
+.alert-info {
+    background: #ebf8ff;
+    color: #2a4365;
+    border: 1px solid #bee3f8;
+    display: block;
+}
+
+.btn-secondary {
+    background: #718096;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #4a5568;
+}
+
+.patient-status {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.patient-status.status-waiting {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    border: 1px solid #bee3f8;
+}
+
+.patient-status.status-serving {
+    background: #f0fff4;
+    color: #276749;
+    border: 1px solid #c6f6d5;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.patient-status.status-completed {
+    background: #faf5ff;
+    color: #553c9a;
+    border: 1px solid #e9d8fd;
+    text-align: center;
+}
+
+.patient-status.status-not-found {
+    background: #fff5f5;
+    color: #9b2c2c;
+    border: 1px solid #fed7d7;
+}
+
+#track-token-card .form-group {
+    margin-bottom: 0;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.settings-row input {
+    width: 100px;
+}
+
+@media (max-width: 768px) {
+    .queue-grid {
+        grid-template-columns: 1fr;
+    }
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    .current-token-display .token-number {
+        font-size: 3rem;
+    }
+}

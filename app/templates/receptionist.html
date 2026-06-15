@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Cure '26 - Receptionist</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Queue Cure '26</h1>
+        <nav>
+            <a href="/receptionist" class="active">Receptionist</a>
+            <a href="/patient">Patient View</a>
+        </nav>
+        <span class="badge">Receptionist Dashboard</span>
+    </header>
+
+    <main>
+        <div id="alert-container"></div>
+
+        <div class="card">
+            <h2>Add Patient</h2>
+            <div class="form-group">
+                <div class="input-field">
+                    <label for="patient-name-input">Patient Name</label>
+                    <input type="text" id="patient-name-input" placeholder="Enter patient name" maxlength="100" autocomplete="off">
+                </div>
+                <button class="btn btn-primary" id="add-patient-btn" onclick="addPatient()">Add to Queue</button>
+            </div>
+        </div>
+
+        <div class="queue-grid">
+            <div class="card">
+                <h2>Current Serving</h2>
+                <div class="current-token-display" id="current-token-display">
+                    <div class="token-number" style="font-size:2rem;">---</div>
+                    <div class="token-label">No patient being served</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Waiting Queue</h2>
+                <ul class="waiting-list" id="waiting-list">
+                    <li class="empty-state">Queue is empty</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Queue Actions</h2>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <button class="btn btn-success" id="call-next-btn" onclick="callNext()">Call Next Token</button>
+            </div>
+        </div>
+
+        <div class="card" id="stats-panel">
+            <h2>Queue Statistics</h2>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-value" id="waiting-count">0</div>
+                    <div class="stat-label">Waiting</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="est-wait">0 min</div>
+                    <div class="stat-label">Est. Wait Time</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="completed-count">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Settings</h2>
+            <div class="settings-row">
+                <div class="input-field">
+                    <label for="consultation-time-input">Avg. Consultation Time (minutes)</label>
+                    <input type="number" id="consultation-time-input" min="1" value="10">
+                </div>
+                <button class="btn btn-warning" onclick="updateConsultationTime()">Set Time</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

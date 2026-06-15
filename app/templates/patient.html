@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Cure '26 - Patient View</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Queue Cure '26</h1>
+        <nav>
+            <a href="/receptionist">Receptionist</a>
+            <a href="/patient" class="active">Patient View</a>
+        </nav>
+        <span class="badge">Live Queue</span>
+    </header>
+
+    <main>
+        <div class="card" id="track-token-card">
+            <h2>Track Your Token</h2>
+            <div class="form-group">
+                <div class="input-field">
+                    <label for="token-input">Your Token Number</label>
+                    <input type="number" id="token-input" placeholder="e.g. 101" min="1" autocomplete="off">
+                </div>
+                <button class="btn btn-primary" id="track-token-btn" onclick="trackToken()">Track</button>
+                <button class="btn btn-secondary" id="clear-token-btn" onclick="clearTrackedToken()" style="display:none;">Clear</button>
+            </div>
+            <div id="patient-status" class="patient-status" style="display:none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Current Serving</h2>
+            <div class="current-token-display" id="current-token-display">
+                <div class="token-number" style="font-size:2rem;">---</div>
+                <div class="token-label">No patient being served</div>
+            </div>
+        </div>
+
+        <div class="stats-row" style="margin-bottom:1.5rem;">
+            <div class="stat-box">
+                <div class="stat-value" id="waiting-count">0</div>
+                <div class="stat-label">Tokens Ahead of You</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="est-wait">0 min</div>
+                <div class="stat-label">Estimated Wait Time</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="avg-time">10 min</div>
+                <div class="stat-label">Avg. Consultation</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Waiting Queue</h2>
+            <ul class="waiting-list" id="waiting-list">
+                <li class="empty-state">Queue is empty</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
