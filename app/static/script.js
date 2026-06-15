@@ -43,7 +43,7 @@ function connectWebSocket() {
 }
 
 function handleQueueUpdate(data) {
-    updateCurrentToken(data.current_token, data.waiting_patients || []);
+    updateCurrentToken(data.current_token, data.patients || []);
     updateWaitingList(data.waiting_patients || []);
     updateStats(data);
     updatePatientStatus(data.patients || [], data.current_token, data.average_consultation_time);
