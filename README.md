@@ -257,8 +257,8 @@ Open two browser tabs:
 
 | Page | URL |
 |------|-----|
-| **Receptionist Dashboard** | http://localhost:8000/receptionist |
-| **Patient View** | http://localhost:8000/patient |
+| **Receptionist Dashboard** | http://127.0.0.1:9100/receptionist |
+| **Patient View** | http://127.0.0.1:9100/patient |
 
 > The database (`queue_cure.db`) is auto-created on first run.
 
